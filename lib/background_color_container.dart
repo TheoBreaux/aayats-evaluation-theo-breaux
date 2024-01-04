@@ -9,7 +9,7 @@ class BackgroundColorContainer extends StatelessWidget {
       color: Colors.red,
       child: const Center(
         child: Text(
-          'HELLO THEO BREAUX!',
+          'HELLO THEO BREAUX BREAUX BREAUX!',
           style: TextStyle(color: Colors.white),
         ),
       ),
