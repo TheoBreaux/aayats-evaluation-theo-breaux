@@ -6,13 +6,7 @@ class BackgroundColorContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      color: Colors.red,
-      child: const Center(
-        child: Text(
-          'HELLO THEO BREAUX BREAUX BREAUX!',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+      color: Colors.black,
     );
   }
 }
