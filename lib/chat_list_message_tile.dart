@@ -28,6 +28,10 @@ class ChatListMessageTile extends StatelessWidget {
                 bottomRight: Radius.circular(10),
               ),
             ),
+            child: const Text(
+              'TEST',
+              style: TextStyle(fontSize: 50, color: Colors.white),
+            ),
           ),
           Positioned(
             top: 5,

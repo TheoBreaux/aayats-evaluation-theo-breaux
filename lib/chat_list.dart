@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front_end_evaluation/chat_list_message_tile.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:front_end_evaluation/bottom_nav_bar.dart';
+import 'package:front_end_evaluation/data/chat_messages.dart';
 
 class ChatList extends StatefulWidget {
   const ChatList({super.key});
@@ -13,6 +14,8 @@ class ChatList extends StatefulWidget {
 }
 
 class _ChatList extends State<ChatList> {
+  final currentMessage = messages[0];
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -65,12 +68,16 @@ class _ChatList extends State<ChatList> {
             )
           ],
         ),
-        body: const SizedBox(
+        body: SizedBox(
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
+              Text(currentMessage.text),
+              ChatListMessageTile(),
+              ChatListMessageTile(),
+              ChatListMessageTile(),
               ChatListMessageTile(),
             ],
           ),
