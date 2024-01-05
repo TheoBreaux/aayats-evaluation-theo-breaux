@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:front_end_evaluation/bottom_nav_bar.dart';
@@ -71,82 +69,50 @@ class _ChatList extends State<ChatList> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
-              Stack(
-                children: [
-                  Container(
-                    width: 370,
-                    height: 70,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(28, 29, 31, 0),
-                          Color.fromRGBO(28, 29, 31, 1),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(10),
-                        bottomRight: Radius.circular(10),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 5,
-                    left: 5,
-                    child: Container(
-                      width: 60,
-                      height: 60,
+              const SizedBox(height: 15),
+              GestureDetector(
+                onTap: () {
+                  print('HELLO');
+                },
+                child: Stack(
+                  children: [
+                    Container(
+                      width: 370,
+                      height: 70,
                       decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: const CircleAvatar(
-                        radius: 70,
-                        // backgroundImage: AssetImage(''),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromRGBO(28, 29, 31, 0),
+                            Color.fromRGBO(28, 29, 31, 1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Positioned(
+                      top: 5,
+                      left: 5,
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: const CircleAvatar(
+                          radius: 70,
+                          // backgroundImage: AssetImage(''),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 15),
-              Stack(
-                children: [
-                  Container(
-                    width: 370,
-                    height: 70,
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromRGBO(28, 29, 31, 0),
-                          Color.fromRGBO(28, 29, 31, 1),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(10),
-                        bottomRight: Radius.circular(10),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 5,
-                    left: 5,
-                    child: Container(
-                      width: 60,
-                      height: 60,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: const CircleAvatar(
-                        radius: 70,
-                        // backgroundImage: AssetImage(''),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ],
           ),
         ),
