@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:front_end_evaluation/background_color_container.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:front_end_evaluation/bottom_nav_bar.dart';
 
 class ChatList extends StatefulWidget {
   const ChatList({super.key});
@@ -64,58 +66,92 @@ class _ChatList extends State<ChatList> {
             )
           ],
         ),
-        body: const BackgroundColorContainer(),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedFontSize: 0,
-          // currentIndex: 2,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 30,
-                color: Color.fromRGBO(149, 161, 172, 1),
+        body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(height: 20),
+              Stack(
+                children: [
+                  Container(
+                    width: 370,
+                    height: 70,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromRGBO(28, 29, 31, 0),
+                          Color.fromRGBO(28, 29, 31, 1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 5,
+                    left: 5,
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: const CircleAvatar(
+                        radius: 70,
+                        // backgroundImage: AssetImage(''),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              label: '',
-              backgroundColor: Color.fromRGBO(28, 28, 29, 1),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.graphic_eq_rounded,
-                size: 30,
-                color: Color.fromRGBO(149, 161, 172, 1),
+              const SizedBox(height: 15),
+              Stack(
+                children: [
+                  Container(
+                    width: 370,
+                    height: 70,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromRGBO(28, 29, 31, 0),
+                          Color.fromRGBO(28, 29, 31, 1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 5,
+                    left: 5,
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: const CircleAvatar(
+                        radius: 70,
+                        // backgroundImage: AssetImage(''),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              label: '',
-              backgroundColor: Color.fromRGBO(28, 28, 29, 1),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-                color: Color.fromRGBO(149, 161, 172, 1),
-              ),
-              label: '',
-              backgroundColor: Color.fromRGBO(28, 28, 29, 1),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.mail_outline_sharp,
-                size: 30,
-                color: Color.fromRGBO(149, 161, 172, 1),
-              ),
-              label: '',
-              backgroundColor: Color.fromRGBO(28, 28, 29, 1),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person_outline,
-                size: 30,
-                color: Color.fromRGBO(149, 161, 172, 1),
-              ),
-              label: '',
-              backgroundColor: Color.fromRGBO(28, 28, 29, 1),
-            ),
-          ],
+            ],
+          ),
         ),
+        backgroundColor: Colors.black,
+        bottomNavigationBar: const BottomNavBar(),
       ),
     );
   }
