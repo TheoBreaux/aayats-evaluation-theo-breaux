@@ -12,7 +12,7 @@ class ChatListMessageTile extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            width: 390,
+            width: 360,
             height: 80,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -21,7 +21,6 @@ class ChatListMessageTile extends StatelessWidget {
                 colors: [
                   Color.fromRGBO(28, 29, 31, 0),
                   Color.fromRGBO(28, 29, 31, 1),
-                  Colors.yellow
                 ],
               ),
               borderRadius: BorderRadius.only(
@@ -29,32 +28,79 @@ class ChatListMessageTile extends StatelessWidget {
                 bottomRight: Radius.circular(10),
               ),
             ),
-            child: const Column(
+            child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 80, top: 5, bottom: 10),
+                  padding: const EdgeInsets.only(left: 80, top: 5, bottom: 10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Kane',
-                        style: TextStyle(color: Colors.white),
+                      Row(
+                        children: [
+                          const Text(
+                            'Kane',
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(251, 252, 252, 0.8),
+                            ),
+                          ),
+                          const SizedBox(width: 30),
+                          Container(
+                            width: 72,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(173, 45, 242, 0.75),
+                                  Color.fromRGBO(62, 121, 255, 0.75),
+                                  Color.fromRGBO(62, 121, 255, 0.75),
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Certified',
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        'Certified',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Text(
-                        '3 hours',
-                        style: TextStyle(color: Colors.white),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: Text(
+                          '3 hours',
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: Color.fromRGBO(149, 161, 172, 1),
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 80),
+                  padding: EdgeInsets.only(left: 80, right: 15),
                   child: Text(
                     "Hi! I'm looking for a studio engineer for my upcoming single. Are you available for mixing a...",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      fontFamily: 'Lato',
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromRGBO(149, 161, 172, 1),
+                    ),
                     softWrap: true,
                   ),
                 ),
@@ -63,16 +109,15 @@ class ChatListMessageTile extends StatelessWidget {
           ),
           Positioned(
             top: 5,
-            left: 5,
             child: Container(
-              width: 60,
-              height: 60,
+              width: 70,
+              height: 70,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
               ),
               child: const CircleAvatar(
                 radius: 70,
-                // backgroundImage: AssetImage(''),
+                backgroundImage: AssetImage('assets/images/profile_image.png'),
               ),
             ),
           ),

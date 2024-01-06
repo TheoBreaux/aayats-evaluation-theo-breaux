@@ -39,7 +39,7 @@ class BottomNavBar extends StatelessWidget {
           icon: Icon(
             Icons.mail_outline_sharp,
             size: 30,
-            color: Color.fromRGBO(149, 161, 172, 1),
+            color: Color.fromRGBO(57, 107, 233, 1),
           ),
           label: '',
           backgroundColor: Color.fromRGBO(28, 28, 29, 1),
