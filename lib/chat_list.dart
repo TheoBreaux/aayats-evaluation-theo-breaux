@@ -68,17 +68,16 @@ class _ChatList extends State<ChatList> {
             )
           ],
         ),
-        body: SizedBox(
+        body: const SizedBox(
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 15),
-              Text(currentMessage.text),
+              SizedBox(height: 15),
               ChatListMessageTile(),
-              ChatListMessageTile(),
-              ChatListMessageTile(),
-              ChatListMessageTile(),
+              // ChatListMessageTile(),
+              // ChatListMessageTile(),
+              // ChatListMessageTile(),
             ],
           ),
         ),

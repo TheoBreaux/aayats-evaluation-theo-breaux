@@ -12,8 +12,8 @@ class ChatListMessageTile extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            width: 370,
-            height: 70,
+            width: 390,
+            height: 80,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -21,6 +21,7 @@ class ChatListMessageTile extends StatelessWidget {
                 colors: [
                   Color.fromRGBO(28, 29, 31, 0),
                   Color.fromRGBO(28, 29, 31, 1),
+                  Colors.yellow
                 ],
               ),
               borderRadius: BorderRadius.only(
@@ -28,9 +29,36 @@ class ChatListMessageTile extends StatelessWidget {
                 bottomRight: Radius.circular(10),
               ),
             ),
-            child: const Text(
-              'TEST',
-              style: TextStyle(fontSize: 50, color: Colors.white),
+            child: const Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 80, top: 5, bottom: 10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Kane',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Certified',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        '3 hours',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 80),
+                  child: Text(
+                    "Hi! I'm looking for a studio engineer for my upcoming single. Are you available for mixing a...",
+                    style: TextStyle(color: Colors.white),
+                    softWrap: true,
+                  ),
+                ),
+              ],
             ),
           ),
           Positioned(
