@@ -1,8 +1,8 @@
 class Message {
   final String username;
-  final String certified;
   final String timeElapsed;
   final String text;
+  final bool isCertified;
 
-  const Message(this.username, this.certified, this.timeElapsed, this.text);
+  const Message(this.username, this.isCertified, this.timeElapsed, this.text);
 }

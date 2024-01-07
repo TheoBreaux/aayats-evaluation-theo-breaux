@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_evaluation/chat_list_message_tile.dart';
+import 'package:front_end_evaluation/certified_icon.dart';
+import 'package:front_end_evaluation/chat_list_preview_card.dart'; //chat tile
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:front_end_evaluation/bottom_nav_bar.dart';
-import 'package:front_end_evaluation/data/chat_messages.dart';
+import 'package:front_end_evaluation/data/chat_messages.dart'; //chat medssage data
 
 class ChatList extends StatefulWidget {
   const ChatList({super.key});
@@ -14,7 +15,7 @@ class ChatList extends StatefulWidget {
 }
 
 class _ChatList extends State<ChatList> {
-  final currentMessage = messages[0];
+  final currentMessage = messages;
 
   @override
   Widget build(context) {
@@ -25,9 +26,7 @@ class _ChatList extends State<ChatList> {
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(28, 28, 29, 1),
           leading: TextButton(
-            onPressed: () {
-              print('Edit Message!');
-            },
+            onPressed: () {},
             child: const Text(
               "Edit",
               style: TextStyle(
@@ -61,23 +60,29 @@ class _ChatList extends State<ChatList> {
                 icon: const Icon(Icons.search),
                 tooltip: 'Search',
                 iconSize: 30,
-                onPressed: () {
-                  print('Search For Shit!');
-                },
+                onPressed: () {},
               ),
             )
           ],
         ),
-        body: const SizedBox(
+        body: SizedBox(
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 15),
-              ChatListMessageTile(),
-              // ChatListMessageTile(),
-              // ChatListMessageTile(),
-              // ChatListMessageTile(),
+              ...currentMessage.map((messageInfo) {
+                return Column(
+                  children: [
+                    const SizedBox(height: 15),
+                    ChatListPreviewCard(
+                      messageInfo.username,
+                      messageInfo.isCertified,
+                      messageInfo.timeElapsed,
+                      messageInfo.text,
+                    ),
+                  ],
+                );
+              })
             ],
           ),
         ),
