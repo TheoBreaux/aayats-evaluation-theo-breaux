@@ -15,6 +15,7 @@ class ChatList extends StatefulWidget {
 
 class _ChatList extends State<ChatList> {
   final currentMessage = messages;
+  bool isEditing = false;
 
   @override
   Widget build(context) {
@@ -25,10 +26,14 @@ class _ChatList extends State<ChatList> {
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(28, 28, 29, 1),
           leading: TextButton(
-            onPressed: () {},
-            child: const Text(
-              "Edit",
-              style: TextStyle(
+            onPressed: () {
+              setState(() {
+                isEditing = !isEditing;
+              });
+            },
+            child: Text(
+              isEditing ? "Done" : "Edit",
+              style: const TextStyle(
                 color: Color.fromRGBO(149, 161, 172, 1),
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
@@ -78,6 +83,7 @@ class _ChatList extends State<ChatList> {
                       messageInfo.isCertified,
                       messageInfo.timeElapsed,
                       messageInfo.text,
+                      isEditing,
                     ),
                   ],
                 );

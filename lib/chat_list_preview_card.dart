@@ -3,14 +3,14 @@ import 'package:front_end_evaluation/certified_icon.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ChatListPreviewCard extends StatelessWidget {
-  const ChatListPreviewCard(
-      this.username, this.isCertified, this.timeElapsed, this.text,
-      {super.key});
+  const ChatListPreviewCard(this.username, this.isCertified, this.timeElapsed,
+      this.text, this.isEditing, {super.key});
 
   final String username;
   final bool isCertified;
   final String timeElapsed;
   final String text;
+  final bool isEditing;
 
   @override
   Widget build(context) {
@@ -61,32 +61,36 @@ class ChatListPreviewCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text(
-                    username,
-                    style: const TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(251, 252, 252, 0.8),
+                  Flexible(
+                    child: Text(
+                      username,
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(251, 252, 252, 0.8),
+                      ),
                     ),
                   ),
 
                   //if user is certified, display badge
                   if (isCertified) const CertifiedIcon(),
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        timeElapsed,
-                        style: const TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: Color.fromRGBO(149, 161, 172, 1),
+                  Flexible(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          timeElapsed,
+                          style: const TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: Color.fromRGBO(149, 161, 172, 1),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -106,78 +110,3 @@ class ChatListPreviewCard extends StatelessWidget {
     );
   }
 }
-
-
-// Dismissible(
-//       key: Key(username), // Provide a unique key for each item
-//       direction: DismissDirection.endToStart,
-//       background: Container(
-//         color: Colors.red, // Background color for delete option
-//         padding: const EdgeInsets.only(left: 1),
-//         alignment: Alignment.centerLeft,
-//         child: const Icon(
-//           Icons.delete,
-//           color: Colors.white,
-//         ),
-//       ),
-//       secondaryBackground: Container(
-//         padding: const EdgeInsets.only(right: 16),
-//         alignment: Alignment.centerRight,
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.end,
-//           children: [
-//             Container(
-//               alignment: Alignment.center,
-//               width: 93,
-//               height: 72,
-//               decoration: const BoxDecoration(
-//                 color: Color.fromRGBO(190, 133, 66, 1),
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(10),
-//                 ),
-//               ),
-//               child: const Text(
-//                 "Pin",
-//                 style: TextStyle(
-//                   fontFamily: 'Lato',
-//                   fontSize: 12,
-//                   fontWeight: FontWeight.normal,
-//                   color: Colors.white,
-//                 ),
-//               ),
-//             ),
-//             const SizedBox(width: 5),
-//             Container(
-//               alignment: Alignment.center,
-//               width: 93,
-//               height: 72,
-//               decoration: const BoxDecoration(
-//                 color: Color.fromRGBO(188, 58, 58, 1),
-//                 borderRadius: BorderRadius.all(
-//                   Radius.circular(10),
-//                 ),
-//               ),
-//               child: const Text(
-//                 "Delete",
-//                 style: TextStyle(
-//                   fontFamily: 'Lato',
-//                   fontSize: 12,
-//                   fontWeight: FontWeight.normal,
-//                   color: Colors.white,
-//                 ),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//       onDismissed: (direction) {
-//         // Handle swipe actions here (delete or pin)
-//         if (direction == DismissDirection.startToEnd) {
-//           // Delete action
-//           // Add your delete logic here
-//         } else if (direction == DismissDirection.endToStart) {
-//           // Pin action
-//           // Add your pin logic here
-//         }
-//       },
-//       child:
