@@ -64,26 +64,22 @@ class _ChatList extends State<ChatList> {
             )
           ],
         ),
-        body: SizedBox(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ...currentMessage.map((messageInfo) {
-                return Column(
-                  children: [
-                    const SizedBox(height: 15),
-                    ChatListPreviewCard(
-                      messageInfo.username,
-                      messageInfo.isCertified,
-                      messageInfo.timeElapsed,
-                      messageInfo.text,
-                    ),
-                  ],
-                );
-              })
-            ],
-          ),
+        body: ListView.builder(
+          itemCount: currentMessage.length,
+          itemBuilder: (context, index) {
+            final messageInfo = currentMessage[index];
+            return Column(
+              children: [
+                const SizedBox(height: 15),
+                ChatListPreviewCard(
+                  messageInfo.username,
+                  messageInfo.isCertified,
+                  messageInfo.timeElapsed,
+                  messageInfo.text,
+                ),
+              ],
+            );
+          },
         ),
         backgroundColor: Colors.black,
         bottomNavigationBar: const BottomNavBar(),
