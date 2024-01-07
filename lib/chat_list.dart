@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_end_evaluation/certified_icon.dart';
 import 'package:front_end_evaluation/chat_list_preview_card.dart'; //chat tile
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:front_end_evaluation/bottom_nav_bar.dart';
