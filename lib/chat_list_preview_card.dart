@@ -3,14 +3,14 @@ import 'package:front_end_evaluation/certified_icon.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ChatListPreviewCard extends StatelessWidget {
-  const ChatListPreviewCard(this.username, this.isCertified, this.timeElapsed,
-      this.text, this.isEditing, {super.key});
+  const ChatListPreviewCard(
+      this.username, this.isCertified, this.timeElapsed, this.text,
+      {super.key});
 
   final String username;
   final bool isCertified;
   final String timeElapsed;
   final String text;
-  final bool isEditing;
 
   @override
   Widget build(context) {
