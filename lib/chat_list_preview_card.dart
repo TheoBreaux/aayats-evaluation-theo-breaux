@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front_end_evaluation/certified_icon.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ChatListPreviewCard extends StatelessWidget {
   const ChatListPreviewCard(
@@ -13,10 +14,27 @@ class ChatListPreviewCard extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return GestureDetector(
-      onHorizontalDragEnd: (DragEndDetails details) {
-        print('HELP!!!');
-      },
+    return Slidable(
+      endActionPane: ActionPane(motion: const StretchMotion(), children: [
+        const SizedBox(width: 5),
+        SlidableAction(
+          label: 'Pin',
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10),
+          ),
+          onPressed: (context) {},
+          backgroundColor: const Color.fromRGBO(190, 133, 66, 1),
+        ),
+        const SizedBox(width: 5),
+        SlidableAction(
+          label: 'Delete',
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10),
+          ),
+          onPressed: (context) {},
+          backgroundColor: const Color.fromRGBO(188, 58, 58, 1),
+        ),
+      ]),
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
