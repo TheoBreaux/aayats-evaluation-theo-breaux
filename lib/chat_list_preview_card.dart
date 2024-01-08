@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front_end_evaluation/certified_icon.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:front_end_evaluation/chat_page.dart';
+import 'package:front_end_evaluation/models/message.dart';
 
 class ChatListPreviewCard extends StatelessWidget {
   const ChatListPreviewCard(
@@ -120,10 +121,12 @@ class ChatListPreviewCard extends StatelessWidget {
             ),
 
             onTap: () {
+              Message messagePreviewData =
+                  Message(username, isCertified, timeElapsed, text);
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ChatPage(),
+                  builder: (context) => ChatPage(messagePreviewData),
                 ),
               );
               // final slidable = Slidable.of(contextFromLayoutBuilder);
