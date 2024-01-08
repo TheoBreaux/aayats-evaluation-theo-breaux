@@ -129,11 +129,6 @@ class ChatListPreviewCard extends StatelessWidget {
                   builder: (context) => ChatPage(messagePreviewData),
                 ),
               );
-              // final slidable = Slidable.of(contextFromLayoutBuilder);
-              // slidable?.openEndActionPane(
-              //   duration: const Duration(milliseconds: 500),
-              //   curve: Curves.decelerate,
-              // );
             },
           );
         },
